@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/Align"]
 	path = .vim/bundle/Align
 	url = https://github.com/vim-scripts/Align.git
+[submodule ".vim/bundle/xterm-color-table.vim"]
+	path = .vim/bundle/xterm-color-table.vim
+	url = https://github.com/guns/xterm-color-table.vim.git
