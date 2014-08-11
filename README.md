@@ -22,7 +22,8 @@
 - 指令：<br>
 
  ```vim
- git submodule deinit .vim/bundle/REPONAME 
+ git submodule deinit .vim/bundle/REPONAME
+ or
  git rm .vim/bundle/REPONAME or git rm --cached .vim/bundle/REPONAME
  ```
 
@@ -30,5 +31,6 @@
 
  ```vim
  git submodule deinit .vim/bundle/Align git rm .vim/bundle/Align
+ or
  git rm --cached .vim/bundle/Align
  ```
