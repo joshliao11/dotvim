@@ -27,7 +27,7 @@ set tabstop=4
 colorscheme jellybeans
 
 set laststatus=2
-set statusline=%0*\ %{fugitive#statusline()}\ %*
+"set statusline=%0*\ %{fugitive#statusline()}\ %*
 set statusline+=%2*\ %*
 set statusline+=%3*%m%r%*
 set statusline+=%2*%f\ %*
