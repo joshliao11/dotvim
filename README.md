@@ -30,7 +30,8 @@
 - ex:<br>
 
  ```vim
- git submodule deinit .vim/bundle/Align git rm .vim/bundle/Align
+ git submodule deinit .vim/bundle/Align
+ git rm .vim/bundle/Align 
  or
  git rm --cached .vim/bundle/Align
  ```
