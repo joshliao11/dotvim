@@ -14,7 +14,7 @@ set fileencoding=utf-8
 " set mouse=a
 set modeline
 set cursorline
-set background=dark
+"set background=dark
 set nocompatible
 set backspace=indent,eol,start
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -24,7 +24,7 @@ set sw=4
 set tabstop=4
 
 "colorscheme desert
-colorscheme jellybeans
+colorscheme molokai
 
 set laststatus=2
 set statusline=%0*\ %{fugitive#statusline()}\ %*
