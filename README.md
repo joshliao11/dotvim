@@ -1,5 +1,5 @@
 ## 使用方法：
-- 更新所有 submoduel
+- 更新所有 submodule
 - 指令：<br>
 
  ```
