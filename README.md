@@ -1,4 +1,11 @@
 ## 使用方法：
+- 更新所有 submoduel
+- 指令：<br>
+
+ ```
+ git submodule foreach git pull origin master
+ ```
+
 - 抓下來後要 update submodule
 - 指令：<br>
 
