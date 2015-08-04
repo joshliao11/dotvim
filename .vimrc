@@ -104,13 +104,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "hi IndentGuidesOdd  ctermbg=233
 "hi IndentGuidesEven ctermbg=234
 
-"indentLine
-let g:indentLine_color_term = 239
-let g:indentLine_color_gui = '#A4E57E'
-let g:indentLine_char = '|'
-"let g:indentLine_color_tty_light = 7
-let g:indentLine_faster = 1
-
 "vim-autocomplpop
 let g:acp_behaviorUserDefinedMeets = 'acp#meetsForKeyword'
 let g:acp_behaviorUserDefinedFunction = 'syntaxcomplete#Complete'
