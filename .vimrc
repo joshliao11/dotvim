@@ -97,7 +97,14 @@ nnoremap <C-K> :call PhpDocSingle()<CR>
 vnoremap <C-K> :call PhpDocRange()<CR>
 
 "let NERDTreeIgnore=['\~$', '\.lo$', '\.la$']
+
+"easymotion
 let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_smartcase = 1
+map <Leader> <Plug>(easymotion-prefix)
+" Gif config
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
 
 "ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
