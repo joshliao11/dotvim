@@ -64,3 +64,9 @@
 [submodule ".vim/bundle/taglist.vim"]
 	path = .vim/bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/vim-ragtag"]
+	path = .vim/bundle/vim-ragtag
+	url = https://github.com/tpope/vim-ragtag.git
