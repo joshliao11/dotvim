@@ -1,4 +1,48 @@
-call pathogen#runtime_append_all_bundles()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" plugin on GitHub repo
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-scripts/OOP-javascript-indentation'
+Plugin 'kien/ctrlp.vim'
+Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'tmhedberg/matchit'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'powerline/fonts'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'bling/vim-airline'
+Plugin 'Townk/vim-autoclose'
+Plugin 'ap/vim-css-color'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'webberwu/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-surround'
+Plugin 'joshliao11/html'
+Plugin 'joshliao11/php'
+Plugin 'joshliao11/php-doc.vim'
+Plugin 'joshliao11/snipmate'
+Plugin 'joshliao11/vim-l9'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set encoding=utf-8
 set fileencodings=utf-8,big5
 
@@ -66,8 +110,6 @@ set laststatus=2
 "highlight User3 cterm=none ctermbg=237 ctermfg=darkred
 "highlight Normal ctermbg=none
 
-filetype plugin indent on
-
 autocmd BufNewFile,BufRead *.phtml set filetype=php
 autocmd BufNewFile,BufRead *.html set filetype=php
 autocmd BufNewFile,BufRead *.htm set filetype=php
@@ -114,12 +156,12 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "vim-indent-guides
-"let g:indent_guides_auto_colors = 0
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_guide_size = 1
-"let g:indent_guides_start_level = 2
-"hi IndentGuidesOdd  ctermbg=233
-"hi IndentGuidesEven ctermbg=234
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+hi IndentGuidesOdd  ctermbg=233
+hi IndentGuidesEven ctermbg=234
 
 "vim-autocomplpop
 let g:acp_behaviorUserDefinedMeets = 'acp#meetsForKeyword'
