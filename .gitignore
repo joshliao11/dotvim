@@ -1,4 +1,4 @@
 .*.swp
 .DS_Store
 .vim/bundle/*
-!.vim/bundle/Vundle.vim/*
+!.vim/bundle/Vundle.vim
