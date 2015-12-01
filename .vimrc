@@ -1,5 +1,28 @@
+set encoding=utf-8
+set fileencodings=utf-8,big5
+
+syntax on
+set t_Co=256
+set incsearch
+set hls
+set nu
+set ru
+set ic
+set encoding=utf-8
+set fileencoding=utf-8
+" set mouse=a
+set modeline
+set cursorline
+"set background=dark
+set backspace=indent,eol,start
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set history=100
+set expandtab
+set sw=4
+set tabstop=4
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -10,6 +33,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugin on GitHub repo
+Plugin 'joshliao11/php-doc.vim'
+"Plugin 'joshliao11/php'
+Plugin 'joshliao11/snipmate'
+Plugin 'joshliao11/vim-l9'
+Plugin 'joshliao11/html'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/OOP-javascript-indentation'
 Plugin 'kien/ctrlp.vim'
@@ -32,43 +60,22 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
-Plugin 'joshliao11/html'
-Plugin 'joshliao11/php'
-Plugin 'joshliao11/php-doc.vim'
-Plugin 'joshliao11/snipmate'
-Plugin 'joshliao11/vim-l9'
+Plugin 'StanAngeloff/php.vim'
 Plugin 'webberwu/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-
-set encoding=utf-8
-set fileencodings=utf-8,big5
-
-syntax on
-set t_Co=256
-set incsearch
-set hls
-set nu
-set ru
-set ic
-set encoding=utf-8
-set fileencoding=utf-8
-" set mouse=a
-set modeline
-set cursorline
-"set background=dark
-set nocompatible
-set backspace=indent,eol,start
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set history=100
-set expandtab
-set sw=4
-set tabstop=4
+filetype plugin indent on    " required
 
 "colorscheme desert
 colorscheme molokai
 
+"StanAngeloff/php.vim
+let php_parent_error_close = 1
+let php_parent_error_open  = 1
+let php_folding = 2
+
+"airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'bubblegum'
 let g:airline_powerline_fonts = 1
@@ -109,8 +116,7 @@ set laststatus=2
 "highlight User3 cterm=none ctermbg=237 ctermfg=darkred
 "highlight Normal ctermbg=none
 
-filetype plugin indent on    " required
-
+"Auto commands
 autocmd BufNewFile,BufRead *.phtml set filetype=php
 autocmd BufNewFile,BufRead *.html set filetype=php
 autocmd BufNewFile,BufRead *.htm set filetype=php
