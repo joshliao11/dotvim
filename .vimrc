@@ -27,7 +27,6 @@ Plugin 'bling/vim-airline'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ap/vim-css-color'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'webberwu/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
@@ -38,10 +37,10 @@ Plugin 'joshliao11/php'
 Plugin 'joshliao11/php-doc.vim'
 Plugin 'joshliao11/snipmate'
 Plugin 'joshliao11/vim-l9'
+Plugin 'webberwu/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 set encoding=utf-8
 set fileencodings=utf-8,big5
@@ -109,6 +108,8 @@ set laststatus=2
 "highlight User2 cterm=none ctermbg=237 ctermfg=white
 "highlight User3 cterm=none ctermbg=237 ctermfg=darkred
 "highlight Normal ctermbg=none
+
+filetype plugin indent on    " required
 
 autocmd BufNewFile,BufRead *.phtml set filetype=php
 autocmd BufNewFile,BufRead *.html set filetype=php
@@ -206,7 +207,7 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
+    let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
