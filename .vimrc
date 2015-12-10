@@ -1,43 +1,21 @@
-set encoding=utf-8
-set fileencodings=utf-8,big5
-
-syntax on
-set t_Co=256
-set incsearch
-set hls
-set nu
-set ru
-set ic
-set encoding=utf-8
-set fileencoding=utf-8
-" set mouse=a
-set modeline
-set cursorline
-"set background=dark
-set backspace=indent,eol,start
-set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set history=100
-set expandtab
-set sw=4
-set tabstop=4
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+    echo 'Installing Vundle ...'
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/Vundle.vim
+endif
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
 " plugin on GitHub repo
 Plugin 'joshliao11/php-doc.vim'
-"Plugin 'joshliao11/php'
-Plugin 'joshliao11/snipmate'
-Plugin 'joshliao11/vim-l9'
+Plugin 'joshliao11/php'
 Plugin 'joshliao11/html'
+"Plugin 'joshliao11/snipmate'
+Plugin 'joshliao11/vim-l9'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/OOP-javascript-indentation'
 Plugin 'kien/ctrlp.vim'
@@ -62,9 +40,44 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'webberwu/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
+" Optional:
+Plugin 'joshliao11/vim-snippets'
+Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+set encoding=utf-8
+set fileencodings=utf-8,big5
+
+syntax on
+set t_Co=256
+set incsearch
+set hls
+set nu
+set ru
+set ic
+set encoding=utf-8
+set fileencoding=utf-8
+" set mouse=a
+set modeline
+set cursorline
+"set background=dark
+set backspace=indent,eol,start
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set history=100
+set expandtab
+set sw=4
+set tabstop=4
+set nocompatible              " be iMproved, required
+set nobomb
+set showmatch
+set smartindent
+
 filetype plugin indent on    " required
 
 "colorscheme desert
@@ -74,6 +87,17 @@ colorscheme molokai
 let php_parent_error_close = 1
 let php_parent_error_open  = 1
 let php_folding = 2
+
+"Put at the very end of your .vimrc file.
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
@@ -118,8 +142,8 @@ set laststatus=2
 
 "Auto commands
 autocmd BufNewFile,BufRead *.phtml set filetype=php
-autocmd BufNewFile,BufRead *.html set filetype=php
-autocmd BufNewFile,BufRead *.htm set filetype=php
+autocmd BufNewFile,BufRead *.html set filetype=html
+autocmd BufNewFile,BufRead *.htm set filetype=html
 
 highlight ExtraWhitespace ctermbg=1 guibg=red
 match ExtraWhitespace /\s\+$/
@@ -221,5 +245,25 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 
 "taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
+
+"load partial
+nnoremap <silent> <F7> :call EventInit()<CR>
+function EventInit()
+    execute '1s/.*/<?php/'
+    call append(1, "require_once(__DIR__ . '/init.php');")
+    call append(2, "?><!DOCTYPE html>")
+    let sline = search("<link")
+    call append(sline - 1, "<?= $view->partial('fbmeta.phtml', $view) ?>")
+    let titletag = search('<title>')
+    execute titletag . 's/\>.*\</><?= $eventTitle ?></'
+
+    let sline = search("main.js")
+    call append(sline, "<?= $view->partial('head.phtml', $view) ?>")
+    let sline = search("<body")
+    call append(sline, "<?= $view->partial('fbroot.phtml', $view) ?>")
+    call append(sline + 1, "<?= $view->partial('header.phtml', $view) ?>")
+    let sline = search("</body>")
+    call append(sline - 1, "<?= $view->partial('ga.phtml', $view) ?>")
+endfunction
 
 set completeopt-=preview
