@@ -1,6 +1,6 @@
 ## 使用方法：
 
-直接 vim 就可以裝好 vundle.vim
+直接 vim 開啟檔案就可以裝好 vundle.vim
 
 ### Vundle 管理方法
  ```
