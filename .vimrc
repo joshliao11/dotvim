@@ -29,7 +29,8 @@ Plugin 'powerline/fonts'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ap/vim-css-color'
 Plugin 'easymotion/vim-easymotion'
@@ -47,7 +48,7 @@ Plugin 'garbas/vim-snipmate'
 
 " Optional:
 Plugin 'joshliao11/vim-snippets'
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,6 +78,8 @@ set nocompatible              " be iMproved, required
 set nobomb
 set showmatch
 set smartindent
+set wildmode=longest,list " use emacs-style tab completion when selecting files, etc
+set wildmenu
 
 filetype plugin indent on    " required
 
@@ -101,7 +104,7 @@ augroup END
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'wombat'
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
