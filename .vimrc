@@ -260,7 +260,7 @@ function EventInit()
     let sline = search("<link")
     call append(sline - 1, "<?= $view->partial('fbmeta.phtml', $view) ?>")
     let titletag = search('<title>')
-    execute titletag . 's/\>.*\</><?= $eventTitle ?></'
+    execute titletag . 's/\>.*\</><?= $eventTitle ?><\/'
 
     let sline = search("main.js")
     call append(sline, "<?= $view->partial('head.phtml', $view) ?>")
