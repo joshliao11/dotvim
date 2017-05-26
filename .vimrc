@@ -28,7 +28,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'powerline/fonts'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Townk/vim-autoclose'
@@ -248,8 +248,8 @@ let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-"taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
+"tagbar
+nmap <F9> :TagbarToggle<CR>
 
 "load partial
 nnoremap <silent> <F7> :call EventInit()<CR>
