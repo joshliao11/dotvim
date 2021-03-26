@@ -251,6 +251,9 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 "tagbar
 nmap <F9> :TagbarToggle<CR>
 
+"NERDTree
+nnoremap <silent> <F8> :NERDTreeToggle<CR>
+
 "load partial
 nnoremap <silent> <F7> :call EventInit()<CR>
 function EventInit()
